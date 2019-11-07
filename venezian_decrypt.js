@@ -36,8 +36,8 @@ function translateMessage(message, n) {
 	let translatedMessage = '';
 
 	for(let i=0; i < message.length; i++) {
-		const asciNumber = message[i].charCodeAt(0)%256;
-		const newNumber = asciNumber + n;
+		const asciNumber = message[i].charCodeAt(0);
+		const newNumber = (asciNumber + n)%256;
 		const newLetter = String.fromCharCode(newNumber);
 		translatedMessage += newLetter;
 	}
